@@ -10,7 +10,7 @@
 
 #include <stdint.h>
 
-#define I2C_ADDRESS 0x55 // I2C address of the SEN15219 sensor
+#define PULSEOX_ADDR 0x55 // I2C address of the SEN15219 sensor
 // I2C peripheral and device addresses
 //#define I2C_ADDRESS 0x57
 #define I2C_PORT gpioPortC
@@ -36,11 +36,19 @@
 // BMP mode configuration values
 #define BMP_MODE 0x02
 #define LED_PW_2MA 0x1F
+int i2c_recvdata_noP_array(uint8_t devaddr, void *data, uint8_t size, void *reg);
+void pulseox_write(uint8_t reg, uint8_t val);
+uint8_t pulseox_simple_read(uint8_t reg);
+void pulseox_read_array(uint8_t loc, char data[], uint8_t len);
+void i2c_recvdata_noP(uint8_t devaddr, void *data, uint8_t size);
+void i2c_senddata(uint8_t devaddr, const void *data, uint8_t size);
+
+void pulseox_check(void);
+int get_spo2(void);
 void i2c_init(void);
-bool writeCommand(uint8_t command);
-//bool readValue(uint8_t command, uint16_t* value);
-bool readValue(uint8_t command);
-void hrspo2_init();
-void read_hrspo2value();
+
+void hrspo2_init(void);
+int get_HR(void);
+
 
 #endif /* SRC_HRSPO2_H_ */

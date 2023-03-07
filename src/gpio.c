@@ -44,9 +44,9 @@
 #define I2C0_SDA_PIN   11
 
 #define RESET_PORT_HRSPO2 gpioPortD
-#define RESET_PIN_HRSPO2 10
+#define RESET_PIN_HRSPO2 10 //p4
 #define MFIO_PORT_HRSPO2 gpioPortD
-#define MFIO_PIN_HRSPO2 11
+#define MFIO_PIN_HRSPO2 11 //p6
 
 
 
