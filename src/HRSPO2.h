@@ -36,19 +36,19 @@
 // BMP mode configuration values
 #define BMP_MODE 0x02
 #define LED_PW_2MA 0x1F
-int i2c_recvdata_noP_array(uint8_t devaddr, void *data, uint8_t size, void *reg);
-void pulseox_write(uint8_t reg, uint8_t val);
+int i2c_recvdata_noP_array(uint8_t devaddr, uint8_t *data_write, uint8_t size, uint8_t *data);
+void pulseox_write(uint8_t familyByte, uint8_t indexByte,uint8_t writebyte);
 uint8_t pulseox_simple_read(uint8_t reg);
-void pulseox_read_array(uint8_t loc, char data[], uint8_t len);
+void pulseox_read_array(uint8_t familyByte, uint8_t indexByte, uint8_t numOfReads, uint8_t data[] );
 void i2c_recvdata_noP(uint8_t devaddr, void *data, uint8_t size);
 void i2c_senddata(uint8_t devaddr, const void *data, uint8_t size);
 
-void pulseox_check(void);
-int get_spo2(void);
+void read_hrspo2value(void);
+
 void i2c_init(void);
 
 void hrspo2_init(void);
-int get_HR(void);
+
 
 
 #endif /* SRC_HRSPO2_H_ */

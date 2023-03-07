@@ -207,10 +207,8 @@ SL_WEAK void app_process_action(void)
   gpioLed0SetOff();
   //gpioLed1SetOff();
 
-  pulseox_check();
-  int spo2 = get_spo2();
-  int HR = get_HR();
-  printf(" spo2 = %d HR = %d \n\r");
+  read_hrspo2value();
+
 
 
 }
