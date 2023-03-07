@@ -46,7 +46,7 @@ void i2c_recvdata_noP(uint8_t devaddr, void *data, uint8_t size)
     //              printf("Error writing to BME680\n in Write= status %d \n\r",status);
                 if(status == i2cTransferDone)
                   {
-                    printf(" I2C write done in i2c_recvdata_noP \n\r");
+//                    printf(" I2C write done in i2c_recvdata_noP \n\r");
 
                   }
 
@@ -60,10 +60,10 @@ void i2c_recvdata_noP(uint8_t devaddr, void *data, uint8_t size)
            {
 
             status = I2C_Transfer(I2C0);
-            //printf("Error writing to BME680\n in Write= status %d \n\r",status);
+//            printf("Error writing to BME680\n in Write= status %d \n\r",status);
            if(status == i2cTransferDone)
               {
-                printf(" I2C read done in i2c_recvdata_noP \n\r");
+//                printf(" I2C read done in i2c_recvdata_noP \n\r");
 
               }
 
@@ -84,10 +84,10 @@ void i2c_senddata(uint8_t devaddr, const void *data, uint8_t size)
         {
 
           status = I2C_Transfer(I2C0);
-          printf("Error writing to hrspo2\n in i2c_senddata= status %d \n\r",status);
+//          printf("Error writing to hrspo2\n in i2c_senddata= status %d \n\r",status);
         if(status == i2cTransferDone)
           {
-            printf(" I2C write done in i2c_senddata \n\r");
+//            printf(" I2C write done in i2c_senddata \n\r");
           }
 
         }
@@ -107,7 +107,7 @@ int i2c_recvdata_noP_array(uint8_t devaddr, uint8_t *data_write, uint8_t size, u
                   {
 
                     status = I2C_Transfer(I2C0);
-      //              printf("Error writing to BME680\n in Write= status %d \n\r",status);
+//                    printf("Error writing to BME680\n in Write= status %d \n\r",status);
                   if(status == i2cTransferDone)
                     {
 //                      printf(" I2C write done in i2c_recvdata_noP_array\n\r");
